@@ -17,8 +17,7 @@ jobs:
       run: |
         mysql -uroot -proot < database/tracker/create_databases.sql
         /bin/bash/ chmod +x gradlew
-                   sed $'s/\r$//' ./install.sh > ./install.Unix.sh
-                   ./gradlew testMigrate
+        ./gradlew testMigrate
     - name: Build with Gradle
       run: ./gradlew build
     - name: Publish artifact
