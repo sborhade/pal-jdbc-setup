@@ -17,7 +17,7 @@ jobs:
         java-version: 11
     
     - name: Create test database
-      shell: sh
+      shell: bash 
       run: |
         mysql -uroot -proot < database/tracker/create_databases.sql
         chmod +x gradlew
