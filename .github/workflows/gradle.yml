@@ -16,6 +16,8 @@ jobs:
     - name: Create test database
       run: |
         mysql -uroot -proot < database/tracker/create_databases.sql
+        /bin/bash/ chmod +x gradlew
+        /bin/bash/ sed $'s/\r$//' ./install.sh > ./install.Unix.sh
         ./gradlew testMigrate
     - name: Build with Gradle
       run: ./gradlew build
