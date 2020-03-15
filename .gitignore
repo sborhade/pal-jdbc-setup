@@ -2,3 +2,13 @@ build
 .gradle
 .idea
 *.iml
+*.class
+*.class
+*.class
+bin/main/io/pivotal/pal/tracker/EnvController.class
+bin/main/io/pivotal/pal/tracker/PalTrackerApplication.class
+bin/main/io/pivotal/pal/tracker/TimeEntryController.class
+bin/main/io/pivotal/pal/tracker/WelcomeController.class
+*.class
+*.class
+*.class

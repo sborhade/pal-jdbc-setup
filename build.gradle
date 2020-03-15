@@ -4,12 +4,21 @@ plugins {
     id 'java'
 }
 
+
+springBoot {
+    buildInfo()
+}
+
 bootRun.environment([
         "WELCOME_MESSAGE": "hello from bootRun",
+        "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
+        "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
 ])
 
 test.environment([
         "WELCOME_MESSAGE": "Hello from test",
+        "MANAGEMENT_ENDPOINT_HEALTH_SHOWDETAILS": "always",
+        "MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE": "*",
 ])
 
 repositories {
@@ -17,6 +26,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.7")
     testCompile 'junit:junit:4.12'
